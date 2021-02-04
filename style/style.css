@@ -577,24 +577,23 @@ body main #testimony .container .tCards .tCard:nth-of-type(2) {
 
 body main #testimony .container .tCards .slider {
   width: 40vw;
-  height: 28vw;
-  font-size: 5vw;
+  height: 25vw;
   background: #ffffff;
   padding: 0 20px;
   margin: 0;
 }
 
 body main #testimony .container .tCards .slider .swiper-slide {
-  padding: 70px 16px;
+  padding: 2vw 1vw;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 24px max-content 50px;
-      grid-template-rows: 24px -webkit-max-content 50px;
-      grid-template-rows: 24px max-content 50px;
+  -ms-grid-rows: 1.8vw max-content 50px;
+      grid-template-rows: 1.8vw -webkit-max-content 50px;
+      grid-template-rows: 1.8vw max-content 50px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  grid-gap: 16px;
+  grid-gap: 1vw;
   border: 1px solid #a8dcec;
   border-top-right-radius: 7vw;
   border-bottom-left-radius: 7vw;
@@ -603,27 +602,32 @@ body main #testimony .container .tCards .slider .swiper-slide {
 body main #testimony .container .tCards .slider .swiper-slide .stars {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (24px)[5];
-      grid-template-columns: repeat(5, 24px);
+  -ms-grid-columns: (1.8vw)[5];
+      grid-template-columns: repeat(5, 1.8vw);
+}
+
+body main #testimony .container .tCards .slider .swiper-slide .stars svg {
+  width: 100%;
 }
 
 body main #testimony .container .tCards .slider .swiper-slide p.text {
   font-weight: 600;
-  font-size: 14px;
-  line-height: 19px;
+  font-size: 1vw;
+  line-height: 1.2vw;
 }
 
 body main #testimony .container .tCards .slider .swiper-slide .person {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px 1fr;
-      grid-template-columns: 50px 1fr;
+  -ms-grid-columns: 3vw 1fr;
+      grid-template-columns: 3vw 1fr;
+  gap: 1vw;
 }
 
 body main #testimony .container .tCards .slider .swiper-slide .person .photo {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 3vw;
+  height: 3vw;
   overflow: hidden;
   background-color: red;
 }
@@ -637,8 +641,8 @@ body main #testimony .container .tCards .slider .swiper-slide .person .photo img
 
 body main #testimony .container .tCards .slider .swiper-slide .person p {
   font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 1.2vw;
+  line-height: 1.6vw;
   color: #afafaf;
 }
 
@@ -646,7 +650,7 @@ body main #testimony .container .tCards .slider .my-button-next,
 body main #testimony .container .tCards .slider .my-button-prev {
   cursor: pointer;
   position: absolute;
-  font-size: 19px;
+  font-size: 1.2vw;
   line-height: 1;
   color: #3e3f43;
   top: 85%;
@@ -663,14 +667,14 @@ body main #testimony .container .tCards .slider .my-button-next {
 }
 
 body main #testimony .container .tCards .slider .my-pagination {
-  bottom: 10px;
+  bottom: 0.8vw;
 }
 
 body main #testimony .container .tCards .slider .my-pagination .swiper-pagination-bullet {
   background: #e5e5e5;
   border-radius: 8px;
-  width: 40px;
-  height: 8px;
+  width: 2.7vw;
+  height: 0.5vw;
   opacity: 1;
 }
 
@@ -1235,6 +1239,53 @@ body .hiddenbox {
   }
   body main #testimony .container .tCards .tCard {
     display: none;
+  }
+  body main #testimony .container .tCards .slider {
+    width: 75vw;
+    height: 55vw;
+  }
+  body main #testimony .container .tCards .slider .swiper-slide {
+    padding: 4vw 2vw;
+    padding-bottom: 6vw;
+    -ms-grid-rows: 3vw max-content 7vw;
+        grid-template-rows: 3vw -webkit-max-content 7vw;
+        grid-template-rows: 3vw max-content 7vw;
+    grid-gap: 2.8vw;
+  }
+  body main #testimony .container .tCards .slider .swiper-slide .stars {
+    -ms-grid-columns: (3vw)[5];
+        grid-template-columns: repeat(5, 3vw);
+    gap: 1vw;
+  }
+  body main #testimony .container .tCards .slider .swiper-slide p.text {
+    font-size: 2.3vw;
+    line-height: 3.1vw;
+  }
+  body main #testimony .container .tCards .slider .swiper-slide .person {
+    -ms-grid-columns: 7vw 1fr;
+        grid-template-columns: 7vw 1fr;
+    gap: 1.8vw;
+  }
+  body main #testimony .container .tCards .slider .swiper-slide .person .photo {
+    width: 7vw;
+    height: 7vw;
+  }
+  body main #testimony .container .tCards .slider .swiper-slide .person p {
+    font-size: 2.2vw;
+    line-height: 3.2vw;
+  }
+  body main #testimony .container .tCards .slider .my-button-next,
+  body main #testimony .container .tCards .slider .my-button-prev {
+    font-size: 2.6vw;
+    line-height: 1;
+    padding: 10px;
+  }
+  body main #testimony .container .tCards .slider .my-pagination {
+    bottom: 1vw;
+  }
+  body main #testimony .container .tCards .slider .my-pagination .swiper-pagination-bullet {
+    width: 4.7vw;
+    height: 1.3vw;
   }
   body footer .container .content {
     -ms-grid-columns: (1fr)[2];

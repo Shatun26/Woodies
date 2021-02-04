@@ -485,36 +485,39 @@ body {
           }
           .slider {
             width: 40vw;
-            height: 28vw;
-            font-size: 5vw;
+            height: 25vw;
             background: #ffffff;
             padding: 0 20px;
             margin: 0;
             .swiper-slide {
-              padding: 70px 16px;
+              padding: 2vw 1vw;
               display: grid;
-              grid-template-rows: 24px max-content 50px;
+              grid-template-rows: 1.8vw max-content 50px;
               align-items: center;
-              grid-gap: 16px;
+              grid-gap: 1vw;
               border: 1px solid #a8dcec;
               border-top-right-radius: 7vw;
               border-bottom-left-radius: 7vw;
               .stars {
                 display: grid;
-                grid-template-columns: repeat(5, 24px);
+                grid-template-columns: repeat(5, 1.8vw);
+                svg {
+                  width: 100%;
+                }
               }
               p.text {
                 font-weight: 600;
-                font-size: 14px;
-                line-height: 19px;
+                font-size: 1vw;
+                line-height: 1.2vw;
               }
               .person {
                 display: grid;
-                grid-template-columns: 50px 1fr;
+                grid-template-columns: 3vw 1fr;
+                gap: 1vw;
                 .photo {
                   border-radius: 50%;
-                  width: 40px;
-                  height: 40px;
+                  width: 3vw;
+                  height: 3vw;
                   overflow: hidden;
                   background-color: red;
                   img {
@@ -525,8 +528,8 @@ body {
                 }
                 p {
                   font-weight: 600;
-                  font-size: 12px;
-                  line-height: 16px;
+                  font-size: 1.2vw;
+                  line-height: 1.6vw;
                   color: #afafaf;
                 }
               }
@@ -535,7 +538,7 @@ body {
             .my-button-prev {
               cursor: pointer;
               position: absolute;
-              font-size: 19px;
+              font-size: 1.2vw;
               line-height: 1;
               color: #3e3f43;
               top: 85%;
@@ -549,12 +552,12 @@ body {
               right: 0;
             }
             .my-pagination {
-              bottom: 10px;
+              bottom: 0.8vw;
               .swiper-pagination-bullet {
                 background: #e5e5e5;
                 border-radius: 8px;
-                width: 40px;
-                height: 8px;
+                width: 2.7vw;
+                height: 0.5vw;
                 opacity: 1;
                 &.swiper-pagination-bullet-active {
                   background-color: #daa520;
@@ -1056,6 +1059,49 @@ body {
             .tCard {
               display: none;
             }
+            .slider {
+              width: 75vw;
+              height: 55vw;
+              .swiper-slide {
+                padding: 4vw 2vw;
+                padding-bottom: 6vw;
+                grid-template-rows: 3vw max-content 7vw;
+                grid-gap: 2.8vw;
+                .stars {
+                  grid-template-columns: repeat(5, 3vw);
+                  gap: 1vw;
+                }
+                p.text {
+                  font-size: 2.3vw;
+                  line-height: 3.1vw;
+                }
+                .person {
+                  grid-template-columns: 7vw 1fr;
+                  gap: 1.8vw;
+                  .photo {
+                    width: 7vw;
+                    height: 7vw;
+                  }
+                  p {
+                    font-size: 2.2vw;
+                    line-height: 3.2vw;
+                  }
+                }
+              }
+              .my-button-next,
+              .my-button-prev {
+                font-size: 2.6vw;
+                line-height: 1;
+                padding: 10px;
+              }
+              .my-pagination {
+                bottom: 1vw;
+                .swiper-pagination-bullet {
+                  width: 4.7vw;
+                  height: 1.3vw;
+                }
+              }
+            }
           }
         }
       }
@@ -1065,7 +1111,6 @@ body {
         .content {
           grid-template-columns: repeat(2, 1fr);
           margin-top: 5vw;
-
           .commonInfo {
             grid-column: 1/3;
             grid-row: 3;
