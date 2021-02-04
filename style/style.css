@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -41,7 +40,6 @@ input {
           align-items: center;
 }
 
-/* Указываем box sizing */
 *,
 *::before,
 *::after {
@@ -49,13 +47,11 @@ input {
           box-sizing: border-box;
 }
 
-/* Убираем внутренние отступы */
 ul[class],
 ol[class] {
   padding: 0;
 }
 
-/* Убираем внешние отступы */
 body,
 h1,
 h2,
@@ -73,7 +69,6 @@ dd {
   margin: 0;
 }
 
-/* Выставляем основные настройки по-умолчанию для body */
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
@@ -81,29 +76,24 @@ body {
   line-height: 1.5;
 }
 
-/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
 ul[class],
 ol[class] {
   list-style: none;
 }
 
-/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-/* Упрощаем работу с изображениями */
 img {
   max-width: 100%;
   display: block;
 }
 
-/* Указываем понятную периодичность в потоке данных у article*/
 article > * + * {
   margin-top: 1em;
 }
 
-/* Наследуем шрифты для инпутов и кнопок */
 input,
 button,
 textarea,
@@ -111,7 +101,6 @@ select {
   font: inherit;
 }
 
-/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 @media (prefers-reduced-motion: reduce) {
   * {
     -webkit-animation-duration: 0.01ms !important;
@@ -131,7 +120,7 @@ select {
 }
 
 .title .tLogo .tImgContainer {
-  width: calc( 20px + 20 * ((100vw - 320px) / 832));
+  width: calc(20px + 20 * ((100vw - 320px) / 832));
 }
 
 .title .tLogo .tImgContainer .imgLogo {
@@ -146,7 +135,7 @@ select {
   padding: 0 10px;
   white-space: nowrap;
   color: #3e3f43;
-  font-size: calc( 20px + 16 * ((100vw - 320px) / 832));
+  font-size: calc(20px + 16 * ((100vw - 320px) / 832));
   font-weight: bold;
 }
 
@@ -162,7 +151,7 @@ select {
   white-space: nowrap;
   color: rgba(34, 34, 34, 0.1);
   font-weight: 800;
-  font-size: calc( 20px + 52 * ((100vw - 320px) / 832));
+  font-size: calc(20px + 52 * ((100vw - 320px) / 832));
 }
 
 body header {
@@ -187,7 +176,7 @@ body header nav .nav_logo {
 }
 
 body header nav .nav_logo .imgContainer {
-  width: calc( 20px + 10 * ((100vw - 320px) / 832));
+  width: calc(20px + 10 * ((100vw - 320px) / 832));
 }
 
 body header nav .nav_logo .imgContainer img {
@@ -199,7 +188,7 @@ body header nav .nav_logo .imgContainer img {
 }
 
 body header nav .nav_logo .navLogo__text {
-  font-size: calc( 15px + 9 * ((100vw - 320px) / 832));
+  font-size: calc(15px + 9 * ((100vw - 320px) / 832));
   font-weight: bold;
   padding-left: 10px;
   letter-spacing: 0.25em;
@@ -210,7 +199,7 @@ body header nav .menu {
 }
 
 body header nav .menu .menuItem {
-  font-size: calc( 14px + 2 * ((100vw - 320px) / 832));
+  font-size: calc(14px + 2 * ((100vw - 320px) / 832));
   font-weight: normal;
   white-space: nowrap;
   line-height: 22px;
@@ -233,17 +222,55 @@ body header nav button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  cursor: pointer;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   justify-self: center;
   font-weight: bold;
   padding: 10px 0px;
-  padding-left: calc( 5px + 35 * ((100vw - 320px) / 832));
-  padding-top: calc( 5px + 5 * ((100vw - 320px) / 832));
-  padding-bottom: calc( 5px + 5 * ((100vw - 320px) / 832));
-  padding-right: calc( 5px + 35 * ((100vw - 320px) / 832));
-  font-size: calc( 10px + 6 * ((100vw - 320px) / 832));
+  position: relative;
+  overflow: hidden;
+  padding-left: calc(5px + 35 * ((100vw - 320px) / 832));
+  padding-top: calc(5px + 5 * ((100vw - 320px) / 832));
+  padding-bottom: calc(5px + 5 * ((100vw - 320px) / 832));
+  padding-right: calc(5px + 35 * ((100vw - 320px) / 832));
+  font-size: calc(10px + 6 * ((100vw - 320px) / 832));
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body header nav button p {
+  z-index: 99;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body header nav button::before {
+  position: absolute;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  content: "";
+  top: -20px;
+  left: -20px;
+  background-color: #3e3f43;
+  width: 1vw;
+  height: 1vw;
+  border-radius: 50%;
+}
+
+body header nav button:hover::before {
+  -webkit-transform: scale(50);
+          transform: scale(50);
+}
+
+body header nav button:hover p {
+  color: white;
+}
+
+body header nav button:hover {
+  -webkit-box-shadow: 0px 7px 8px -1px rgba(34, 60, 80, 0.2);
+          box-shadow: 0px 7px 8px -1px rgba(34, 60, 80, 0.2);
 }
 
 body header nav .burger {
@@ -268,7 +295,7 @@ body header .headerContent .headerLeft {
 
 body header .headerContent .headerLeft h1 {
   font-weight: normal;
-  font-size: calc( 14px + 22 * ((100vw - 320px) / 832));
+  font-size: calc(14px + 22 * ((100vw - 320px) / 832));
 }
 
 body header .headerContent .headerLeft h1 span {
@@ -277,7 +304,7 @@ body header .headerContent .headerLeft h1 span {
 
 body header .headerContent .headerLeft h2 {
   margin-top: 20px;
-  font-size: calc( 18px + 54 * ((100vw - 320px) / 832));
+  font-size: calc(18px + 54 * ((100vw - 320px) / 832));
 }
 
 body header .headerContent .headerLeft button {
@@ -286,11 +313,21 @@ body header .headerContent .headerLeft button {
   font-weight: bold;
   font-size: 16px;
   background-color: #daa520;
-  padding-top: calc( 8px + 6 * ((100vw - 320px) / 832));
-  padding-bottom: calc( 8px + 6 * ((100vw - 320px) / 832));
-  padding-left: calc( 12px + 12 * ((100vw - 320px) / 832));
-  padding-right: calc( 12px + 12 * ((100vw - 320px) / 832));
-  font-size: calc( 10px + 6 * ((100vw - 320px) / 832));
+  padding-top: calc(8px + 6 * ((100vw - 320px) / 832));
+  padding-bottom: calc(8px + 6 * ((100vw - 320px) / 832));
+  padding-left: calc(12px + 12 * ((100vw - 320px) / 832));
+  padding-right: calc(12px + 12 * ((100vw - 320px) / 832));
+  font-size: calc(10px + 6 * ((100vw - 320px) / 832));
+  border: 2px solid #daa520;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+body header .headerContent .headerLeft button:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: #daa520;
+  -webkit-box-shadow: 0px 7px 8px -1px rgba(218, 165, 32, 0.2);
+          box-shadow: 0px 7px 8px -1px rgba(218, 165, 32, 0.2);
 }
 
 body header .headerContent .headerRight {
@@ -353,7 +390,7 @@ body main #aboutUs .container .usRowFirst .usRightFirst {
 
 body main #aboutUs .container .usRowFirst .usRightFirst h1 {
   font-weight: 800;
-  font-size: calc( 25px + 11 * ((100vw - 320px) / 832));
+  font-size: calc(25px + 11 * ((100vw - 320px) / 832));
 }
 
 body main #aboutUs .container .usRowFirst .usRightFirst h1 span {
@@ -362,18 +399,18 @@ body main #aboutUs .container .usRowFirst .usRightFirst h1 span {
 
 body main #aboutUs .container .usRowFirst .usRightFirst h2 {
   margin-top: 1.3vw;
-  font-size: calc( 20px + 4 * ((100vw - 320px) / 832));
+  font-size: calc(20px + 4 * ((100vw - 320px) / 832));
   color: black;
 }
 
 body main #aboutUs .container .usRowSecond .usLeftSecond {
-  padding-top: calc( 20px + 100 * ((100vw - 320px) / 832));
-  padding-bottom: calc( 0px + 120 * ((100vw - 320px) / 832));
+  padding-top: calc(20px + 100 * ((100vw - 320px) / 832));
+  padding-bottom: calc(0px + 120 * ((100vw - 320px) / 832));
   padding-right: 25vw;
 }
 
 body main #aboutUs .container .usRowSecond .usLeftSecond h1 {
-  font-size: calc( 25px + 11 * ((100vw - 320px) / 832));
+  font-size: calc(25px + 11 * ((100vw - 320px) / 832));
   color: black;
   font-weight: 600;
 }
@@ -386,7 +423,7 @@ body main #aboutUs .container .usRowSecond .usLeftSecond h1 span {
 body main #aboutUs .container .usRowSecond .usLeftSecond h2 {
   margin-top: 1.3vw;
   color: black;
-  font-size: calc( 20px + 4 * ((100vw - 320px) / 832));
+  font-size: calc(20px + 4 * ((100vw - 320px) / 832));
 }
 
 body main #howItWorks .container {
@@ -442,7 +479,7 @@ body main #howItWorks .container .howItems .howItem h1 {
   width: 100%;
   white-space: nowrap;
   text-align: center;
-  font-size: calc( 18px + 6 * ((100vw - 320px) / 832));
+  font-size: calc(18px + 6 * ((100vw - 320px) / 832));
 }
 
 body main #howItWorks .container a {
@@ -452,6 +489,16 @@ body main #howItWorks .container a {
   color: white;
   border-radius: 4px;
   font-size: 16px;
+  border: 2px solid #daa520;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+body main #howItWorks .container a:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: #daa520;
+  -webkit-box-shadow: 0px 7px 8px -1px rgba(218, 165, 32, 0.2);
+          box-shadow: 0px 7px 8px -1px rgba(218, 165, 32, 0.2);
 }
 
 body main #categories .container .title {
@@ -503,7 +550,7 @@ body main #categories .cards .card .cardName {
   -ms-flex-item-align: start;
       align-self: flex-start;
   font-weight: 800;
-  font-size: calc( 20px + 4 * ((100vw - 320px) / 832));
+  font-size: calc(20px + 4 * ((100vw - 320px) / 832));
   margin-top: 2vw;
   margin-left: 1.5vw;
 }
@@ -518,6 +565,7 @@ body main #categories .cards .card .cardImg img {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  display: block;
 }
 
 body main #categories .cards .card:first-of-type .cardImg {
@@ -541,11 +589,12 @@ body main #categories .cards .card button {
       align-self: flex-end;
   margin-right: 1.5vw;
   margin-bottom: 2vw;
-  font-size: calc( 15px + 4 * ((100vw - 320px) / 832));
+  font-size: calc(15px + 4 * ((100vw - 320px) / 832));
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid #3e3f43;
   padding: 0.7vw 1.6vw;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 body main #testimony {
@@ -714,11 +763,11 @@ body footer .container .subscribe .subText h1 {
   color: black;
   font-weight: 800;
   line-height: 30px;
-  font-size: calc( 12px + 6 * ((100vw - 320px) / 832));
+  font-size: calc(12px + 6 * ((100vw - 320px) / 832));
 }
 
 body footer .container .subscribe .subText h2 {
-  font-size: calc( 10px + 6 * ((100vw - 320px) / 832));
+  font-size: calc(10px + 6 * ((100vw - 320px) / 832));
   line-height: 18px;
 }
 
@@ -746,7 +795,7 @@ body footer .container .subscribe .uEmail form {
 }
 
 body footer .container .subscribe .uEmail form input {
-  font-size: calc( 10px + 6 * ((100vw - 320px) / 832));
+  font-size: calc(10px + 6 * ((100vw - 320px) / 832));
 }
 
 body footer .container .subscribe .uEmail form button {
@@ -782,7 +831,7 @@ body footer .container .content .commonInfo .comNav_logo {
 }
 
 body footer .container .content .commonInfo .comNav_logo .comImgContainer {
-  width: calc( 20px + 10 * ((100vw - 320px) / 832));
+  width: calc(20px + 10 * ((100vw - 320px) / 832));
 }
 
 body footer .container .content .commonInfo .comNav_logo .comImgContainer img {
@@ -792,7 +841,7 @@ body footer .container .content .commonInfo .comNav_logo .comImgContainer img {
 }
 
 body footer .container .content .commonInfo .comNav_logo .comNavLogo__text {
-  font-size: calc( 14px + 10 * ((100vw - 320px) / 832));
+  font-size: calc(14px + 10 * ((100vw - 320px) / 832));
   letter-spacing: 0.25em;
   font-weight: 600;
   padding-left: 10px;
@@ -812,13 +861,13 @@ body footer .container .content .fotColumn:first-of-type {
 }
 
 body footer .container .content .fotColumn h1 {
-  font-size: calc( 16px + 2 * ((100vw - 320px) / 832));
+  font-size: calc(16px + 2 * ((100vw - 320px) / 832));
   margin-bottom: 1.5vw;
   padding-top: 1vw;
 }
 
 body footer .container .content .fotColumn h2 {
-  font-size: calc( 14px + 0 * ((100vw - 320px) / 832));
+  font-size: calc(14px + 0 * ((100vw - 320px) / 832));
   color: #8d8d8d;
   font-weight: 300;
   margin-bottom: 1vw;
@@ -831,7 +880,7 @@ body footer .container .content #lastInfo {
   text-align: center;
   color: #8d8d8d;
   margin-bottom: 1.5vw;
-  font-size: calc( 14px + 2 * ((100vw - 320px) / 832));
+  font-size: calc(14px + 2 * ((100vw - 320px) / 832));
 }
 
 body .btnScrollTop {
@@ -892,10 +941,10 @@ body .hiddenbox {
     margin-bottom: 10px;
   }
   .title .tLogo .tText {
-    font-size: calc( 20px + 16 * ((100vw - 320px) / 832));
+    font-size: calc(20px + 16 * ((100vw - 320px) / 832));
   }
   .title .tMainText {
-    font-size: calc( 30px + 42 * ((100vw - 320px) / 832));
+    font-size: calc(30px + 42 * ((100vw - 320px) / 832));
   }
   body header {
     min-height: auto;
@@ -990,14 +1039,18 @@ body .hiddenbox {
     white-space: nowrap;
     -webkit-transition: 0.5s;
     transition: 0.5s;
-    -webkit-transform: translateY(-400px);
-            transform: translateY(-400px);
+    -webkit-transform: translateY(-200vw);
+            transform: translateY(-200vw);
+    opacity: 0.5;
   }
   body header nav .burgerMenu .itemsMenu:first-child {
     margin-top: 100px;
   }
   body header nav .burgerMenu.active {
     top: 0;
+  }
+  body header nav .burgerMenu.active .itemsMenu {
+    opacity: 1;
   }
   body header nav .burgerMenu.active .itemsMenu:nth-of-type(1) {
     -webkit-transform: translateY(0px);
@@ -1077,7 +1130,7 @@ body .hiddenbox {
     -ms-flex-item-align: start;
         align-self: flex-start;
     font-weight: 800;
-    font-size: calc( 15px + 9 * ((100vw - 320px) / 832));
+    font-size: calc(15px + 9 * ((100vw - 320px) / 832));
     margin-top: 2vw;
     margin-left: 1.5vw;
   }
@@ -1107,7 +1160,7 @@ body .hiddenbox {
         align-self: flex-end;
     margin-right: 1.5vw;
     margin-bottom: 2vw;
-    font-size: calc( 15px + 4 * ((100vw - 320px) / 832));
+    font-size: calc(15px + 4 * ((100vw - 320px) / 832));
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid #3e3f43;
     padding: 0.7vw 1.6vw;
@@ -1124,15 +1177,15 @@ body .hiddenbox {
   body footer .container .subscribe .subText {
     text-align: center;
     padding: 0;
-    width: calc( 274px + 286 * ((100vw - 320px) / 832));
+    width: calc(274px + 286 * ((100vw - 320px) / 832));
     margin-bottom: 15px;
   }
   body footer .container .subscribe .subText h1 {
     margin-bottom: 10px;
-    font-size: calc( 20px + 15 * ((100vw - 320px) / 832));
+    font-size: calc(20px + 15 * ((100vw - 320px) / 832));
   }
   body footer .container .subscribe .subText h2 {
-    font-size: calc( 15px + 15 * ((100vw - 320px) / 832));
+    font-size: calc(15px + 15 * ((100vw - 320px) / 832));
     line-height: 30px;
   }
   body footer .container .subscribe .uEmail {
